@@ -29,6 +29,27 @@ namespace FusedVR.Web3 {
 
         private static string bearerToken = null; //authentication token for the user's session
 
+       
+        /// <summary>
+        /// helpers to get and set the bearerToken
+        /// Used to get the token when a user logs in
+        /// </summary>
+        /// <returns>String : BearerToken</returns>
+        public static string GetBearerToken()
+        {
+            return bearerToken;
+        }
+
+        /// <summary>
+        /// Used to set this bearerToken from playerprefs for example
+        /// </summary>
+        /// <param name="token"></param>
+        public static void SetBearerToken(string token)
+        {
+            bearerToken = token;
+        }
+
+
         /// <summary>
         /// Calls the /fused/login with an appId and email address
         /// Requires a long polling against the API to ensure the user has time to authenticate
